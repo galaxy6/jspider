@@ -98,8 +98,7 @@ mysql数据库配置
 
 
 补充：
-由于是模拟浏览器的抓取的原因，抓取的过程相对于静态抓取时间会比较长。
-为了增加爬虫的速度，我在downloadwebkit.py中注释掉了
-\#self.click(browser,"a")
-\#self.click(browser,"input")代码
+由于是模拟浏览器的抓取的原因，抓取的过程相对于静态抓取时间会比较长。为了增加爬虫的速度，我在downloadwebkit.py中注释掉了
+	#self.click(browser,"a")
+	#self.click(browser,"input")代码
 即获取点击形成的url链接功能，如果为了抓取的更全面，可以去掉注释，但是耗费的时间较长。
