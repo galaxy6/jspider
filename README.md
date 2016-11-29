@@ -30,18 +30,15 @@ scapy
 scapy_http
 
 
+
 mysql数据库配置
 
 在./jspider/jspider/mysql.py文件的__init__初始函数中配置相关数据库参数。
 
   self.db_host = "localhost"  #数据库ip
-  
   self.db_port = 3306         #数据库端口
-
   self.db_user = "root"       #数据库用户
-  
   self.db_password= "xxxxx"   #数据库密码
-  
   self.db_name = "xxxxx"      #数据库名字
 
 
