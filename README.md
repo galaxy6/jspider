@@ -6,36 +6,50 @@
 
 ##Introduce
 1.系统环境kail，脚本环境python2.x
-2.重写scrapy的下载器，爬取的过程中直接模拟浏览器爬取网站的一般链接，form提交的post数据，js形成的数据，js点击形成的链接，ajax形成的链接。
-抓取经过本地网卡请求的本域名下的链接。
+
+2.重写scrapy的下载器，爬取的过程中直接模拟浏览器爬取网站的一般链接，form提交的post数据，js形成的数据，js点击形成的链接，ajax形成的链接。抓取经过本地网卡请求的本域名下的链接。
+
 3.利用scapy抓取经过网卡的请求。
+
 
 ##Installation
 In Kail, you need to install some libraries.
 
 scrapy
+
 splinter
+
 phantomjs
+
 MySQLdb
+
 multiprocessing
+
 scapy
+
 scapy_http
 
-mysql数据库配置
-在./jspider/jspider/mysql.py文件的__init__初始函数中配置相关数据库参数。
-        self.db_host = "localhost"  #数据库ip
-        self.db_port = 3306         #数据库端口
-        self.db_user = "root"       #数据库用户
-        self.db_password= "xxxxx"   #数据库密码
-        self.db_name = "xxxxx"      #数据库名字
 
+mysql数据库配置
+
+在./jspider/jspider/mysql.py文件的__init__初始函数中配置相关数据库参数。
+
+  self.db_host = "localhost"  #数据库ip
+  
+  self.db_port = 3306         #数据库端口
+
+  self.db_user = "root"       #数据库用户
+  
+  self.db_password= "xxxxx"   #数据库密码
+  
+  self.db_name = "xxxxx"      #数据库名字
 
 
 ##Usage
-#scrapy crawl jspider -a url=[URL]
+\#scrapy crawl jspider -a url=[URL]
 
 例子
-#scrapy crawl jspider -a url=http://demo.aisec.cn/demo/aisec/ 
+\#scrapy crawl jspider -a url=http://demo.aisec.cn/demo/aisec/ 
 
 爬虫对demo.aisec.cn爬虫模拟战的链接抓取显示结果。
 
@@ -60,7 +74,9 @@ mysql数据库配置
         [*] shutting down at 18:07:26
 
 数据库中链接的存储查询结果
+
         mysql> select id,url,body from demo_aisec_cn;
+
         +----+--------------------------------------------------------------------------+---------------------------+
         | id | url                                                                      | body                      |
         +----+--------------------------------------------------------------------------+---------------------------+
@@ -87,6 +103,6 @@ mysql数据库配置
 补充：
 由于是模拟浏览器的抓取的原因，抓取的过程相对于静态抓取时间会比较长。
 为了增加爬虫的速度，我在downloadwebkit.py中注释掉了
-#self.click(browser,"a")
-#self.click(browser,"input")代码
+\#self.click(browser,"a")
+\#self.click(browser,"input")代码
 即获取点击形成的url链接功能，如果为了抓取的更全面，可以去掉注释，但是耗费的时间较长。
