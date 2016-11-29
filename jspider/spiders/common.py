@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/b:in/env python
 # -*- coding: utf-8 -*- 
 
 import sys
@@ -30,26 +30,25 @@ def get_port(link):
 	return port_
 	
 def get_baseurl(link):
-    """
-    这个函数的主要作用是得到url的访问协议和域名
-    参数： url链接
-    """
-    netloc = urlparse.urlparse(link).netloc
-    scheme = urlparse.urlparse(link).scheme
-    url = "%s://%s" %(scheme,netloc)
-    return url  
-
+	"""
+	这个函数的主要作用是得到url的访问协议和域名
+	参数： url链接
+	"""
+	netloc = urlparse.urlparse(link).netloc
+	scheme = urlparse.urlparse(link).scheme
+	url = "%s://%s" %(scheme,netloc)
+	return url  
 
 def get_urlpath(link):
-    """
-    这个函数的主要作用是得到url的协议域名路径
-    参数： url链接
-    """
-    netloc = urlparse.urlparse(link).netloc
-    scheme = urlparse.urlparse(link).scheme
-    path = urlparse.urlparse(link).path
-    url = "%s://%s%s" %(scheme,netloc,path)
-    return url
+	"""
+	这个函数的主要作用是得到url的协议域名路径
+	参数： url链接
+	"""
+	netloc = urlparse.urlparse(link).netloc
+	scheme = urlparse.urlparse(link).scheme
+	path = urlparse.urlparse(link).path
+	url = "%s://%s%s" %(scheme,netloc,path)
+	return url
 
 def md5(string):
 	"""
